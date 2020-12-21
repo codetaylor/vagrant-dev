@@ -2,4 +2,4 @@
 
 # set -x
 
-echo 'PATH=PATH:/vagrant/bin' >> /home/vagrant/.bashrc
+echo 'PATH=$PATH:/vagrant/bin' >> /home/vagrant/.bashrc
