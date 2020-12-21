@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# https://github.com/pichenettes/mutable-dev-environment
+# Mostly from https://github.com/pichenettes/mutable-dev-environment
 
 # set -x
 

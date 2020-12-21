@@ -72,5 +72,6 @@ Vagrant.configure("2") do |config|
   end
 
   # Provisioning
-  config.vm.provision :shell, path: "install-toolchain.sh"
+  config.vm.provision :shell, path: "00-install-toolchain.sh"
+  config.vm.provision :shell, path: "01-setup-environment.sh"
 end
