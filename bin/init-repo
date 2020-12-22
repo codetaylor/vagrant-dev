@@ -6,11 +6,17 @@ if [[ -z $DEV_HOST ]]; then
     die "Set environment variable DEV_HOST before running; DEV_HOST=git@example.com:namespace"
 fi
 
+if [[ -z $1 ]]; then
+    die "Usage: init-repo <name>"
+fi
+
 REPO="${DEV_HOST}/${1}.git"
 BRANCH="main"
 
 git init
-git add -A
-git commit -m "Initial commit"
-git push -u $REPO $BRANCH
 git remote add origin $REPO
+touch README.md
+echo 'Auto-generated readme file.' > README.md
+git add README.md
+git commit -m "Initial commit"
+git push -u origin main
