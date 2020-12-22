@@ -113,3 +113,26 @@ sudo usermod -a -G dialout <username>
 where <username> is your Linux user name, in our case `vagrant`.
 
 **You will need to `vagrant halt` and `vagrant up` for this change to take effect.**
+
+## Additional Development Setup
+
+### Scripts
+
+If you intend to use the `init-repo` script, add the `DEV_HOST` environment variable to `.bashrc`:
+
+```
+export DEV_HOST=git@example.com:namespace
+```
+
+### Git
+
+Configure git user and email:
+
+```
+git config --global user.name "Your Name"
+git config --global user.email you@example.com
+```
+
+### SSH
+
+Install your ssh keys in `~/.ssh`.
