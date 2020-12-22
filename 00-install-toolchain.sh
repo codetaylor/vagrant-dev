@@ -25,9 +25,6 @@ sudo add-apt-repository ppa:git-core/ppa -y
 sudo apt-get update -qq
 sudo apt-get install git -y
 
-# Reconfigure the git default branch name to 'main'
-git config --global init.defaultBranch main
-
 # Install basic development tools
 sudo dpkg --add-architecture i386
 sudo apt-get update -qq
