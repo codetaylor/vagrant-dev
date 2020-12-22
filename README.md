@@ -135,7 +135,7 @@ Host default
   UserKnownHostsFile /dev/null
   StrictHostKeyChecking no
   PasswordAuthentication no
-  IdentityFile C:/projects/vagrant-dev/.vagrant/machines/default/virtualbox/private_key
+  IdentityFile C:/vagrant-dev/.vagrant/machines/default/virtualbox/private_key
   IdentitiesOnly yes
   LogLevel FATAL
 ```
