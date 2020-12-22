@@ -19,10 +19,19 @@ sudo apt-get update -qq
 sudo apt-get install -y linux-image-extra-virtual
 sudo modprobe ftdi_sio vendor=0x0403 product=0x6001
 
+# Get the latest version of git
+# https://unix.stackexchange.com/a/170831
+sudo add-apt-repository ppa:git-core/ppa -y
+sudo apt-get update -qq
+sudo apt-get install git -y
+
+# Reconfigure the git default branch name to 'main'
+git config --global init.defaultBranch main
+
 # Install basic development tools
 sudo dpkg --add-architecture i386
 sudo apt-get update -qq
-sudo apt-get install -y build-essential autotools-dev autoconf pkg-config libusb-1.0-0 libusb-1.0-0-dev libftdi1 libftdi-dev git libc6:i386 libncurses5:i386 libstdc++6:i386 cowsay figlet language-pack-en
+sudo apt-get install -y build-essential autotools-dev autoconf pkg-config libusb-1.0-0 libusb-1.0-0-dev libftdi1 libftdi-dev libc6:i386 libncurses5:i386 libstdc++6:i386 cowsay figlet language-pack-en
 sudo locale-gen UTF-8
 
 # Install python
