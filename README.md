@@ -94,7 +94,7 @@ If you intend to use the box to clone and build existing repos, these setup task
 
 ### Scripts
 
-If you intend to use the `init-repo` script, add the `DEV_HOST` environment variable to `.bashrc`:
+If you intend to use the `git-init` script, add the `DEV_HOST` environment variable to `.bashrc`:
 
 ```
 export DEV_HOST=git@example.com:namespace

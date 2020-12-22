@@ -13,10 +13,18 @@ fi
 REPO="${DEV_HOST}/${1}.git"
 BRANCH="main"
 
+if [ -d .git ]; then
+    die "Already a git repository!"
+fi
+
 git init
 git remote add origin $REPO
-touch README.md
-echo 'Auto-generated readme file.' > README.md
+
+if [ ! -f README.md ]; then
+    touch README.md
+    echo 'Auto-generated readme file.' > README.md
+fi
+
 git add README.md
 git commit -m "Initial commit"
 git push -u origin main
