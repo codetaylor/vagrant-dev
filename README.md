@@ -1,4 +1,4 @@
-# Vagrant Environment
+# Vagrant Development Environment
 
 ## Kudos and Inspiration
 
