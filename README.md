@@ -22,14 +22,6 @@ Then **log out and log back in** to make sure the group change takes effect.
 
 ## Usage
 
-First, clone this repository:
-
-	git clone https://github.com/pichenettes/mutable-dev-environment.git
-
-or download: 
-
-	https://github.com/pichenettes/mutable-dev-environment/archive/master.zip
-
 To start the VM, open a terminal in the `mutable-dev-environment` directory with the Vagrantfile and run:
 
     vagrant up
