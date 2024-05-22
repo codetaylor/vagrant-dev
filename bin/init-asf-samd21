@@ -1,0 +1,11 @@
+#!/bin/bash
+#set -x
+
+mkdir -p xdk_asf/samd21
+
+cp -rv $ASFPATH/thirdparty/CMSIS/Include/ xdk_asf/cmsis
+cp -rv $ASFPATH/sam0/utils/cmsis/samd21/include/ xdk_asf/samd21/include
+cp -rv $ASFPATH/sam0/utils/linker_scripts/samd21/gcc/ xdk_asf/samd21/ldscript
+cp -v $ASFPATH/sam0/utils/cmsis/samd21/source/gcc/startup_samd21.c xdk_asf/samd21
+cp -v $ASFPATH/sam0/utils/cmsis/samd21/source/system_samd21.c xdk_asf/samd21
+cp -v $ASFPATH/sam0/utils/cmsis/samd21/source/system_samd21.h xdk_asf/samd21

@@ -67,11 +67,29 @@ Vagrant.configure("2") do |config|
       vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'Olimex OpenOCD JTAG ARM-USB-OCD-H', '--vendorid', '0x15BA', '--productid', '0x002b']
       vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'Olimex OpenOCD JTAG', '--vendorid', '0x15BA', '--productid', '0x0003']
       vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'AVRISP mkII', '--vendorid', '0x03EB', '--productid', '0x2104']
+      vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'Atmel-ICE', '--vendorid', '0x03EB', '--productid', '0x2141']
       vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'FTDI serial adapter', '--vendorid', '0x0403', '--productid', '0x6001']
       vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'Arduino Uno', '--vendorid', '0x2341', '--productid', '0x0001']
   end
 
   # Provisioning
-  config.vm.provision :shell, path: "00-install-toolchain.sh"
-  config.vm.provision :shell, path: "01-setup-environment.sh"
+  config.vm.provision :shell, path: "initialize.sh"
+
+  config.vm.provision :shell, path: "install-drivers.sh"
+  config.vm.provision :shell, path: "install-git.sh"
+  config.vm.provision :shell, path: "install-python.sh"
+  config.vm.provision :shell, path: "install-unzip.sh"
+  config.vm.provision :shell, path: "install-usbutils.sh"
+
+  config.vm.provision :shell, path: "install-toolchain-basic.sh"
+  config.vm.provision :shell, path: "install-toolchain-avr.sh"
+  config.vm.provision :shell, path: "install-toolchain-arm.sh"
+  config.vm.provision :shell, path: "install-toolchain-xdk-asf.sh"
+  
+  config.vm.provision :shell, path: "compile-openocd.sh"
+  config.vm.provision :shell, path: "compile-stlink.sh"
+
+  config.vm.provision :shell, path: "setup-usb-devices.sh"
+  config.vm.provision :shell, path: "setup-bashrc.sh"
+  config.vm.provision :shell, path: "setup-git.sh"
 end
